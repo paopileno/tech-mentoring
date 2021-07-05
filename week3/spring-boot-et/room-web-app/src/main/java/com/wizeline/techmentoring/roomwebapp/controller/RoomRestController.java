@@ -1,29 +1,25 @@
-/*
- * Copyright (c) 2021 Nextiva, Inc. to Present.
- * All rights reserved.
- */
-
 package com.wizeline.techmentoring.roomwebapp.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.wizeline.techmentoring.roomwebapp.model.Room;
 import com.wizeline.techmentoring.roomwebapp.service.RoomService;
 
 import lombok.AllArgsConstructor;
 
-@Controller
-@RequestMapping("/rooms")
+
+@RestController
+@RequestMapping("/api/rooms")
 @AllArgsConstructor
-public class RoomController {
+public class RoomRestController {
     private final RoomService roomService;
 
     @GetMapping
-    public String getRooms(Model model) {
-        model.addAttribute("rooms", roomService.getAllRooms());
-        return "rooms";
+    public List<Room> getAllRooms() {
+        return roomService.getAllRooms();
     }
-
 }
