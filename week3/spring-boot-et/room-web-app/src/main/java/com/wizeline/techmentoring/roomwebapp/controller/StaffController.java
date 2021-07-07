@@ -18,7 +18,7 @@ public class StaffController {
 
     @GetMapping
     public String getStaff(Model model) {
-        model.addAttribute("staff", staffService.getStaff());
+        model.addAttribute("staff", staffService.getDBStaff());
         return "staff";
     }
 }

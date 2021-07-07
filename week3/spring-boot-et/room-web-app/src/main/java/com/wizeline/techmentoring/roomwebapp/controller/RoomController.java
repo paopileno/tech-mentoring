@@ -22,7 +22,7 @@ public class RoomController {
 
     @GetMapping
     public String getRooms(Model model) {
-        model.addAttribute("rooms", roomService.getAllRooms());
+        model.addAttribute("rooms", roomService.getDBRooms());
         return "rooms";
     }
 

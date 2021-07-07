@@ -10,11 +10,16 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.wizeline.techmentoring.roomwebapp.data.RoomRepository;
 import com.wizeline.techmentoring.roomwebapp.model.Room;
 
+import lombok.AllArgsConstructor;
+
 @Service
+@AllArgsConstructor
 public class RoomService {
     private static final List<Room> rooms = new ArrayList<Room>();
+    private final RoomRepository roomRepository;
 
     static {
         for (int i = 0; i < 10; i++) {
@@ -22,7 +27,11 @@ public class RoomService {
         }
     }
 
-    public List<Room> getAllRooms() {
+    public List<Room> getStaticRooms() {
         return rooms;
+    }
+
+    public List<Room> getDBRooms() {
+        return roomRepository.findAll();
     }
 }

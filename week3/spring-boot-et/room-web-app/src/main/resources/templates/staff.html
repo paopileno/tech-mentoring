@@ -14,7 +14,7 @@
         <th>Position</th>
     </tr>
     <tr th:each="employee:${staff}">
-        <td th:text="${employee.number}">Number</td>
+        <td th:text="${employee.employeeId}">Number</td>
         <td th:text="${employee.firstName}">Name</td>
         <td th:text="${employee.lastName}">Info</td>
         <td th:text="${employee.position}">Info</td>

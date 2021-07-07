@@ -20,6 +20,6 @@ public class RoomRestController {
 
     @GetMapping
     public List<Room> getAllRooms() {
-        return roomService.getAllRooms();
+        return roomService.getStaticRooms();
     }
 }

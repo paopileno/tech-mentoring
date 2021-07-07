@@ -19,6 +19,6 @@ public class StaffRestController {
 
     @GetMapping
     public List<Employee> getAllStaff() {
-        return staffService.getStaff();
+        return staffService.getStaticStaff();
     }
 }
